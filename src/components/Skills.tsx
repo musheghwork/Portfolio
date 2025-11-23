@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { skills } from "../data/skills";
-interface Skills {
-  mode?: "day" | "night";
-  setShowOtherSkils: (showOtherSkils: true | false) => void;
-}
+import type { SkillsProps } from "../types/pages.types";
 
-export default function Skills({ mode = "night", setShowOtherSkils }: Skills) {
+export default function Skills({
+  mode = "night",
+  setShowOtherSkils,
+}: SkillsProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [show, setShow] = useState(true);
@@ -110,9 +110,9 @@ export default function Skills({ mode = "night", setShowOtherSkils }: Skills) {
             <div className="mt-8 text-center">
               <button
                 onClick={() => handleClick()}
-                className={`px-6 py-4 rounded-full hover:bg-cyan-600 text-white font-semibold transition-colors duration-300 backdrop-blur-sm border ${colors.border} `}
+                className={` px-4 py-2 sm:px-6 sm:py-4  rounded-full hover:bg-cyan-600 text-white font-semibold transition-colors duration-300 backdrop-blur-sm border ${colors.border} `}
               >
-                <h2 className="text-xl md:text-2xl font-bold  text-center">
+                <h2 className="text-5xs md:text-xl font-bold  text-center">
                   <span
                     className={`${colors.headingGradient} bg-clip-text text-transparent`}
                   >

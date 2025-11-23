@@ -137,11 +137,6 @@ export const otherSkills = [
     color: "from-teal-400/80 to-teal-600/80",
   },
   {
-    name: "OpenCart",
-    icon: FaOpencart,
-    color: "from-white/40 to-blue-500/80",
-  },
-  {
     name: "Zustand",
     icon: TbLetterZSmall,
     color: "from-neutral-800/80 to-neutral-500/80",
@@ -155,6 +150,11 @@ export const otherSkills = [
     name: "Bootstrap",
     icon: FaBootstrap,
     color: "from-purple-400/80 to-blue-500/80",
+  },
+  {
+    name: "OpenCart",
+    icon: FaOpencart,
+    color: "from-white/40 to-blue-500/80",
   },
   {
     name: "Shopify",

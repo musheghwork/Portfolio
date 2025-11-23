@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import useSpaceAnimation from "../hooks/useSpaceAnimation";
-import type { SpaceBackgroundProps } from "../types/background.types";
+import type { ModeProps } from "../types/pages.types";
 
-export default function SpaceBackground({ mode }: SpaceBackgroundProps) {
+export default function SpaceBackground({ mode }: ModeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useSpaceAnimation(canvasRef, mode ?? "day");
 

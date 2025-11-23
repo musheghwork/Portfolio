@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-interface AboutProps {
-  mode?: "day" | "night";
-}
+import type { ModeProps } from "../types/pages.types";
 
-export default function About({ mode = "night" }: AboutProps) {
+export default function About({ mode = "night" }: ModeProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [displayedText, setDisplayedText] = useState<string[]>(["", "", ""]);
@@ -42,7 +40,6 @@ export default function About({ mode = "night" }: AboutProps) {
         currentLine >= textLines.length - 1 &&
         currentChar >= textLines[textLines.length - 1].length - 1
       ) {
-        console.log("a");
         return;
       }
       setDisplayedText((prev) => {

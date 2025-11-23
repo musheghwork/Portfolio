@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import type { ModeProps } from "../types/pages.types";
 
-interface HeroProps {
-  mode?: "day" | "night";
-}
-
-export default function Hero({ mode = "night" }: HeroProps) {
+export default function Hero({ mode = "night" }: ModeProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -53,14 +50,31 @@ export default function Hero({ mode = "night" }: HeroProps) {
                     : "bg-gradient-to-br from-cyan-500 to-purple-600"
                 }`}
               />
-              <div
-                className={`relative w-full h-full rounded-full flex items-center justify-center text-5xl sm:text-6xl md:text-7xl font-bold shadow-2xl ${
-                  mode === "day"
-                    ? "bg-gradient-to-br from-yellow-200 to-orange-300"
-                    : "bg-gradient-to-br from-cyan-400 to-purple-500"
-                }`}
-              >
-                M
+              <div className="flex items-center justify-center min-h-screen">
+                <div className="flex items-center justify-center min-h-screen">
+                  <div
+                    className={`
+                      relative w-40 h-40 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full 
+                      flex items-center justify-center 
+                      text-3xl sm:text-5xl md:text-7xl font-bold 
+                      shadow-2xl ring-4 ring-white/20
+                      overflow-hidden
+                      transition-all duration-700 ease-in-out
+                      bg-[length:200%_200%]
+                      ${
+                        mode === "day"
+                          ? "bg-gradient-to-br from-yellow-200 via-yellow-300 to-orange-400 animate-gradient-x"
+                          : "bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 animate-gradient-x"
+                      } 
+                    `}
+                  >
+                    <img
+                      src="myImg.jpg"
+                      alt="Avatar"
+                      className="w-full h-full object-cover rounded-full shadow-inner"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

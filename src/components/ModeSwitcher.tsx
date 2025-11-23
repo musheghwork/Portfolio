@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
-
-interface AnimatedModeSwitcherProps {
-  mode: "day" | "night";
-  setMode: (mode: "day" | "night") => void;
-}
+import type { AnimatedModeSwitcherProps } from "../types/pages.types";
 
 export default function ModeSwitcher({
   mode,

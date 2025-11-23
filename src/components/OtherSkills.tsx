@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { otherSkills } from "../data/skills";
+import type { ModeProps } from "../types/pages.types";
 
-interface OtherSkillsProps {
-  mode?: "day" | "night";
-}
-
-export default function OtherSkills({ mode = "night" }: OtherSkillsProps) {
+export default function OtherSkills({ mode = "night" }: ModeProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 

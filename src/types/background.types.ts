@@ -72,7 +72,3 @@ export interface GrowingFlower {
   flowerParams?: FlowerParams;
   stemHeight: number;
 }
-
-export type SpaceBackgroundProps = {
-  mode?: "day" | "night";
-};

@@ -7,6 +7,8 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import OtherSkills from "./components/OtherSkills";
 import Projects from "./components/Projects";
+import Contacts from "./components/Contacts";
+import Footer from "./components/Footer";
 
 function App() {
   const [mode, setMode] = useState<"day" | "night">("day");
@@ -20,7 +22,9 @@ function App() {
       <About mode={mode} />
       <Skills mode={mode} setShowOtherSkils={setShowOtherSkils} />
       {showOtherSkils && <OtherSkills mode={mode} />}
-      <Projects />
+      <Projects mode={mode} />
+      <Contacts mode={mode} />
+      <Footer />
     </div>
   );
 }
