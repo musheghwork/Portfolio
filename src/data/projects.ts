@@ -42,7 +42,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     gradient: "from-yellow-400 to-orange-500",
-    liveLink: "https://your-live-link.com/vue-ecommerce",
-    githubLink: "https://github.com/your-username/vue-ecommerce-app",
+    liveLink: "https://vue3-login-register-product.vercel.app/",
+    githubLink: "https://github.com/musheghwork/vue3-login-register-product",
   },
 ];

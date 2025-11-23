@@ -10,6 +10,9 @@ export default function About({ mode = "night" }: ModeProps) {
     " Hello! I'm a frontend developer who loves turning ideas into interactive web experiences. I enjoy blending design and code to create interfaces that are both beautiful and functional.",
     "My focus is on building fast, responsive, and accessible websites using modern technologies. Every project I work on is an opportunity to push the boundaries of creativity and performance.",
     "Outside of coding, I explore new web technologies, experiment with creative UI effects, and share insights with the developer community to keep learning and growing.",
+    "• Developed and maintained the frontend for two Telegram bots using React.js, Redux, and TypeScript, ensuring a responsive and user-friendly interface, while managing version control and team collaboration with GitLab.",
+    "• Developed the user interface for the GTA5 RP server using Vue.js, HTML, CSS, JavaScript, and jQuery, and implemented server-side functionality with C# and .NET, ensuring smooth integration, performance, and a seamless gaming experience.",
+    "• Developed and maintained a website using OpenCart, implementing custom features and templates with PHP and Twig.",
   ];
 
   useEffect(() => {
@@ -44,6 +47,9 @@ export default function About({ mode = "night" }: ModeProps) {
       }
       setDisplayedText((prev) => {
         const newText = [...prev];
+        if (newText[currentLine] === undefined) {
+          newText[currentLine] = "";
+        }
         newText[currentLine] += textLines[currentLine][currentChar];
         return newText;
       });
@@ -51,12 +57,12 @@ export default function About({ mode = "night" }: ModeProps) {
       currentChar++;
 
       if (currentChar < textLines[currentLine].length) {
-        setTimeout(typeNextChar, 30);
+        setTimeout(typeNextChar, 10);
       } else {
         currentLine++;
         currentChar = 0;
         if (currentLine < textLines.length) {
-          setTimeout(typeNextChar, 200);
+          setTimeout(typeNextChar, 70);
         }
       }
     };
