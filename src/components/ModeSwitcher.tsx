@@ -19,7 +19,7 @@ export default function ModeSwitcher({
   const toggleMode = () => setMode(mode === "day" ? "night" : "day");
 
   return (
-    <div className="absolute w-38 top-7 left-1/2 -translate-x-1/2 h-16 flex items-center justify-between bg-gray-400 rounded-full p-2">
+    <div className="fixed w-38 top-7 left-1/2 -translate-x-1/2 h-16 flex items-center justify-between bg-gray-400 rounded-full p-2 z-100">
       <div className="w-16 h-16 rounded-full flex items-center justify-center">
         <Sun className="w-8 h-8 text-white" />
       </div>

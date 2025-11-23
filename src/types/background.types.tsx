@@ -1,10 +1,10 @@
 interface Star {
   x: number;
   y: number;
-  vx: number;
-  vy: number;
-  size: number;
-  arrived: boolean;
+  vx?: number;
+  vy?: number;
+  size?: number;
+  arrived?: boolean;
 }
 
 export interface ConstellationState {

@@ -2,11 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { skills } from "../data/skills";
 interface Skills {
   mode?: "day" | "night";
+  setShowOtherSkils: (showOtherSkils: true | false) => void;
 }
 
-export default function Skills({ mode = "night" }: Skills) {
+export default function Skills({ mode = "night", setShowOtherSkils }: Skills) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [show, setShow] = useState(true);
+
+  function handleClick() {
+    setShow(false);
+    setShowOtherSkils(true);
+    document
+      .getElementById("otherSkills")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,6 +42,7 @@ export default function Skills({ mode = "night" }: Skills) {
   }, []);
 
   const colors = {
+    border: mode === "day" ? "border-red-400" : "border-purple-400",
     headingGradient:
       mode === "day"
         ? "bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400"
@@ -95,6 +106,22 @@ export default function Skills({ mode = "night" }: Skills) {
               );
             })}
           </div>
+          {show && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => handleClick()}
+                className={`px-6 py-4 rounded-full hover:bg-cyan-600 text-white font-semibold transition-colors duration-300 backdrop-blur-sm border ${colors.border} `}
+              >
+                <h2 className="text-xl md:text-2xl font-bold  text-center">
+                  <span
+                    className={`${colors.headingGradient} bg-clip-text text-transparent`}
+                  >
+                    Other Technologies Worked With
+                  </span>
+                </h2>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
