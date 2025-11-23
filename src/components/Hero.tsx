@@ -27,7 +27,7 @@ export default function Hero({ mode = "night" }: ModeProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 overflow-hidden">
-      <div className="relative z-10 text-center max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto px-4 -translate-y-70">
+      <div className="relative z-10 text-center max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto px-4 -translate-y-50">
         <div
           className={`transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
