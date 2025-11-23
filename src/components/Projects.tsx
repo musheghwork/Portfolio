@@ -40,9 +40,9 @@ export default function Projects({ mode = "night" }: ModeProps) {
 
   return (
     <section ref={sectionRef} className="relative py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         <div
-          className={`transition-all duration-1000 ${
+          className={`transition-all duration-1000  ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           }`}
         >
@@ -54,16 +54,16 @@ export default function Projects({ mode = "night" }: ModeProps) {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group transition-all duration-700 delay-${
+                className={`group transition-all duration-700  delay-${
                   index * 150
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-[1.02]">
+                <div className="relative  backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-[1.02]">
                   <div className="relative h-64 overflow-hidden">
                     <div
                       className={`absolute inset-0  ${colors.headingGradient} opacity-20`}
@@ -98,18 +98,22 @@ export default function Projects({ mode = "night" }: ModeProps) {
                     </div>
 
                     <div className="flex gap-4">
-                      <button
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
                         className={`${colors.headingGradient} ${colors.text} flex items-center gap-2 px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:shadow-cyan-500/50`}
                       >
                         <ExternalLink className="w-4 h-4" />
                         View Live
-                      </button>
-                      <button
+                      </a>
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
                         className={`${colors.text} flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300`}
                       >
                         <Github className="w-4 h-4" />
                         Code
-                      </button>
+                      </a>
                     </div>
                   </div>
 

@@ -1,38 +1,48 @@
 export const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Game flip and match",
     description:
-      "A modern e-commerce solution with real-time inventory management and seamless checkout experience.",
-    image:
-      "https://images.pexels.com/photos/6214479/pexels-photo-6214479.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["React", "Node.js", "Stripe"],
+      "A fun and interactive memory game where you flip cards to find matching pairs. Built with Vue.js, TypeScript, and Tailwind CSS.",
+    image: "/flip-and-match.png",
+    tags: ["Vue.js", " CSS", "JavaScript"],
     gradient: "from-cyan-500 to-blue-600",
+    liveLink: "https://mushegh-flip-match.vercel.app/",
+    githubLink: "https://github.com/musheghwork/flip-and-match-vue",
   },
   {
-    title: "Social Media Dashboard",
+    title: "Game color sort puzzle",
     description:
-      "Analytics dashboard for tracking social media metrics across multiple platforms with real-time updates.",
-    image:
-      "https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Next.js", "TypeScript", "Charts"],
+      "A color-sorting puzzle game where players organize colors in a 5x2 grid. Built with Vue.js, TypeScript, Tailwind CSS, and JavaScript.",
+    image: "/color-puzzle.png",
+    tags: ["Vue.js", "TypeScript", "Tailwind CSS", "JavaScript"],
     gradient: "from-purple-500 to-pink-600",
+    liveLink: "https://color-sort-puzzle.vercel.app/",
+    githubLink: "https://github.com/musheghwork/color-sort-puzzle",
   },
   {
-    title: "Task Management App",
+    title: "React Charts Dashboard",
     description:
-      "Collaborative project management tool with drag-and-drop functionality and team collaboration features.",
-    image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["React", "Firebase", "Tailwind"],
-    gradient: "from-green-500 to-emerald-600",
+      "A dynamic dashboard built with React that displays various charts and graphs. Pure React and JavaScript, no TypeScript or Tailwind used.",
+    image: "/react-charts.png",
+    tags: ["React", "JavaScript", "Charts", "Data Visualization"],
+    gradient: "from-green-400 to-blue-500",
+    liveLink: "https://mushegh-react-charts.vercel.app/",
+    githubLink: "https://github.com/musheghwork/React-charts",
   },
   {
-    title: "Portfolio CMS",
+    title: "Vue E-commerce App",
     description:
-      "Content management system for creative professionals to showcase their work with beautiful galleries.",
-    image:
-      "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["React", "GraphQL", "Sanity"],
-    gradient: "from-orange-500 to-red-600",
+      "Full-featured e-commerce app in Vue.js with login, registration, product pages, database, fetch API, and pagination.",
+    image: "/vue-ecommerce.png",
+    tags: [
+      "Vue.js",
+      "JavaScript",
+      "Database",
+      "Form Validation",
+      "Tailwind CSS",
+    ],
+    gradient: "from-yellow-400 to-orange-500",
+    liveLink: "https://your-live-link.com/vue-ecommerce",
+    githubLink: "https://github.com/your-username/vue-ecommerce-app",
   },
 ];
