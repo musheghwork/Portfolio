@@ -52,6 +52,9 @@ export function updateConstellations(
       if (Math.hypot(star.x - target.x, star.y - target.y) < 0.5)
         star.arrived = true;
     } else {
+      if (star.vx === undefined) star.vx = Math.random() - 0.5;
+      if (star.vy === undefined) star.vy = Math.random() - 0.5;
+
       star.x += star.vx;
       star.y += star.vy;
 
@@ -60,7 +63,7 @@ export function updateConstellations(
     }
 
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+    ctx.arc(star.x, star.y, star.size ?? 1, 0, Math.PI * 2);
     ctx.fillStyle = "white";
     ctx.fill();
   });
