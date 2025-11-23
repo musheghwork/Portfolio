@@ -1,4 +1,5 @@
 import type { Particle } from "./../types/background.types";
+
 export function drawMoon(
   ctx: CanvasRenderingContext2D,
   width: number,
@@ -32,7 +33,7 @@ export function drawMoon(
 
 const particles: Particle[] = [];
 
-for (let i = 0; i < innerWidth / 2; i++) {
+for (let i = 0; i < innerWidth / 3; i++) {
   particles.push({
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
@@ -41,16 +42,18 @@ for (let i = 0; i < innerWidth / 2; i++) {
     size: Math.random() * 2 + 1,
   });
 }
+
 export function drawParticle(
   ctx: CanvasRenderingContext2D,
-  canvas: HTMLCanvasElement
+  height: number,
+  width: number
 ) {
   particles.forEach((particle) => {
     particle.x += particle.vx;
     particle.y += particle.vy;
 
-    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+    if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+    if (particle.y < 0 || particle.y > height) particle.vy *= -1;
 
     ctx.beginPath();
     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);

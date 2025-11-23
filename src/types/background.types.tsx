@@ -1,7 +1,19 @@
-export type Star = {
+interface Star {
   x: number;
   y: number;
-};
+  vx: number;
+  vy: number;
+  size: number;
+  arrived: boolean;
+}
+
+export interface ConstellationState {
+  id: number;
+  stars: Star[];
+  startMovement: boolean;
+  timer: number;
+  spawnTimer: number;
+}
 
 export type Constellation = {
   name: string;
@@ -27,6 +39,7 @@ export interface LeafParams {
   progress: number;
   side: number;
 }
+
 export interface Butterfly {
   x: number;
   y: number;
@@ -39,6 +52,7 @@ export interface Butterfly {
   colorStart: string;
   colorEnd: string;
 }
+
 export interface FlowerParams {
   petals: number;
   petalLengths?: number[] | undefined;
@@ -59,8 +73,6 @@ export interface GrowingFlower {
   stemHeight: number;
 }
 
-export interface DrawMoon {
-  ctx: CanvasRenderingContext2D;
-  width: number;
-  height: number;
-}
+export type SpaceBackgroundProps = {
+  mode?: "day" | "night";
+};

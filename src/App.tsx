@@ -1,32 +1,21 @@
 import { useState } from "react";
-
 import "./App.css";
 import SpaceBackground from "./components/background";
+import Hero from "./components/Hero";
+import ModeSwitcher from "./components/ModeSwitcher";
+import About from "./components/About";
+import Skills from "./components/Skills";
 
 function App() {
-  const [isDay, setIsDay] = useState(true);
-  console.log(isDay);
+  const [mode, setMode] = useState<"day" | "night">("day");
+
   return (
-    <div className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-black ">
-      <SpaceBackground mode={isDay ? "day" : "night"} />
-      <div className="absolute top-15 left-20 flex gap-2">
-        <button
-          className={`px-4 py-2 ${
-            isDay ? "bg-yellow-400 text-black" : "bg-white text-black"
-          }`}
-          onClick={() => setIsDay(true)}
-        >
-          Day
-        </button>
-        <button
-          className={`px-4 py-2 ${
-            !isDay ? "bg-gray-800 text-white" : "bg-white text-black"
-          }`}
-          onClick={() => setIsDay(false)}
-        >
-          Night
-        </button>
-      </div>
+    <div className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-black">
+      <SpaceBackground mode={mode} />
+      <Hero mode={mode} />
+      <ModeSwitcher mode={mode} setMode={setMode} />
+      <About mode={mode} />
+      <Skills mode={mode} />
     </div>
   );
 }
